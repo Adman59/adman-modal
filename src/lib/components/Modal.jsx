@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './modal.css';
 
-const Modal = () => {
+const Modal = ({ title = "",
+text = "" }) => {
   const [openModal, setOpenModal] = useState(false);
 
   return (
@@ -16,9 +17,9 @@ const Modal = () => {
             <div className='titleCloseBtn'>
               <button onClick={() => setOpenModal(false)}>X</button>
             </div>
-            <div className="modal__title">Employee created</div>
+            <div className="modal__title">{title}</div>
             <div className="modal__body">
-              <p>Nice! Your employee has been successfully created 👌</p>
+              <p>{text}</p>
             </div>
             <div className="modal__footer">
               <button onClick={() => setOpenModal(false)}>Cancel</button>
@@ -32,6 +33,8 @@ const Modal = () => {
 
 Modal.propTypes = {
   closeModal: PropTypes.func.isRequired,
+  title: PropTypes.string,
+  text: PropTypes.string,
 };
 
 export default Modal;
