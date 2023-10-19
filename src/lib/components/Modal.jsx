@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './modal.css';
 
@@ -8,7 +8,7 @@ const Modal = () => {
   return (
     <div>
       <button className="openModalBtn" onClick={() => setOpenModal(true)}>
-        Open
+        Save
       </button>
       {openModal && (
         <div className="modal__background">
